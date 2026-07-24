@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bike Training"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"/>
+
+
+    <Button
+        android:id="@+id/trainingButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Training"/>
+
+
+    <!-- Training Data -->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="15dp"
+
+        android:layout_marginTop="20dp">
+
+
+        <TextView
+
+            android:id="@+id/timeValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Time: 00:00:00"
+
+            android:textSize="18sp"/>
+
+
+        <TextView
+
+            android:id="@+id/caloriesValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Calories: 0 kcal"
+
+            android:textSize="18sp"/>
+
+
+        <TextView
+
+            android:id="@+id/distanceValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Distance: 0.00 km"
+
+            android:textSize="18sp"/>
+
+
+        <TextView
+
+            android:id="@+id/speedValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Speed: 0.0 km/h"
+
+            android:textSize="18sp"/>
+
+
+        <TextView
+
+            android:id="@+id/powerValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Power: 0 W"
+
+            android:textSize="18sp"/>
+
+
+        <TextView
+
+            android:id="@+id/rpmValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="RPM: 0"
+
+            android:textSize="18sp"/>
+
+
+        <TextView
+
+            android:id="@+id/resistanceValue"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Resistance: 0"
+
+            android:textSize="18sp"/>
+
+
+    </LinearLayout>
+
+
+
+    <!-- Collapsed Logs -->
+
+    <!-- Logs -->
+
+    <TextView
+
+        android:id="@+id/logTitle"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Logs ▼"
+
+        android:textSize="18sp"
+
+        android:layout_marginTop="10dp"/>
+
+
+    <ScrollView
+
+        android:id="@+id/logContainer"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+
+        android:layout_weight="1">
+
+
+        <TextView
+
+            android:id="@+id/status"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Starting..."
+
+            android:textSize="12sp"/>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
