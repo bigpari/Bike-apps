@@ -1,3 +1,12 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -19,6 +28,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String", "SERVER_URL",
+            "\"${localProperties.getProperty("SERVER_URL", "ws://localhost:8080")}\""
+        )
+        buildConfigField(
+            "String", "GARMIN_APP_ID",
+            "\"${localProperties.getProperty("GARMIN_APP_ID", "00000000-0000-0000-0000-000000000000")}\""
+        )
     }
 
     buildTypes {
@@ -34,6 +52,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -56,4 +75,5 @@ dependencies {
     implementation("com.google.code.gson:gson:2.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.garmin.connectiq:ciq-companion-app-sdk:2.2.0@aar")
 }

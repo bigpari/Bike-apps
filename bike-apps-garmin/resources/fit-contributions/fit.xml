@@ -1,0 +1,56 @@
+<!--
+  Required alongside the session.createField() calls in BikeCyclingApp.mc.
+  Per the docs: "Field id _must_ match the fitField id in resources or
+  your data will not display!" - I'd missed this file entirely in the
+  first pass; the createField() calls alone are not sufficient.
+
+  IMPORTANT OPEN QUESTION (see GarminBridge.kt's header comment): these
+  read like custom supplementary chart fields, not a way to feed the
+  activity's native/primary distance-speed-cadence. Test a real ride and
+  check Garmin Connect's activity page before assuming this is equivalent
+  to a real sensor pairing.
+-->
+<resources>
+    <strings>
+        <string id="distance_label">Bike Distance</string>
+        <string id="distance_units">km</string>
+
+        <string id="speed_label">Bike Speed</string>
+        <string id="speed_units">km/h</string>
+
+        <string id="cadence_label">Bike Cadence</string>
+        <string id="cadence_units">rpm</string>
+    </strings>
+
+    <fitContributions>
+        <fitField
+            id="5"
+            displayInChart="true"
+            sortOrder="0"
+            precision="2"
+            chartTitle="@Strings.distance_label"
+            dataLabel="@Strings.distance_label"
+            unitLabel="@Strings.distance_units"
+            fillColor="#00AA00" />
+
+        <fitField
+            id="6"
+            displayInChart="true"
+            sortOrder="1"
+            precision="1"
+            chartTitle="@Strings.speed_label"
+            dataLabel="@Strings.speed_label"
+            unitLabel="@Strings.speed_units"
+            fillColor="#0088CC" />
+
+        <fitField
+            id="4"
+            displayInChart="true"
+            sortOrder="2"
+            precision="0"
+            chartTitle="@Strings.cadence_label"
+            dataLabel="@Strings.cadence_label"
+            unitLabel="@Strings.cadence_units"
+            fillColor="#CC6600" />
+    </fitContributions>
+</resources>
